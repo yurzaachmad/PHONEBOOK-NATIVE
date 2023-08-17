@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import React, {useState, useEffect} from 'react';
 import {loadStudent} from '../actions/users';
 import PhoneItem from './PhoneItem';
-import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, Image} from 'react-native';
 
 const ITEMS_PER_PAGE = 10; // Number of items to display per page
 
@@ -55,18 +55,21 @@ export default function PhoneList({
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView onScroll={handleEndReached}>
-        {currentItems.map((student: any, index) => (
-          <PhoneItem
-            key={student.id}
-            student={student}
-            navigation={navigation}
-          />
-        ))}
-
-        <View style={{height: 300}} />
-      </ScrollView>
+    <View>
+      <View>
+        <View style={styles.container}>
+          <ScrollView onScroll={handleEndReached}>
+            {currentItems.map((student: any, index) => (
+              <PhoneItem
+                key={student.id}
+                student={student}
+                navigation={navigation}
+              />
+            ))}
+            <View style={{height: 300}} />
+          </ScrollView>
+        </View>
+      </View>
     </View>
   );
 }

@@ -36,7 +36,6 @@ function App(): JSX.Element {
             component={Avatar}
             options={{headerShown: false}}
           />
-          {/* <Avatar /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
