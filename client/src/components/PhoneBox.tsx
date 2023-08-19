@@ -52,8 +52,8 @@ const SearchContact = ({navigation}: {navigation: any}) => {
 
   return (
     <View>
-      <View style={{backgroundColor: '#0080ff', padding: 10}}>
-        <View id="search" style={styles.container}>
+      <View style={{backgroundColor: '#0080ff', padding: 30}}>
+        <View style={styles.container}>
           <TouchableOpacity onPress={onSortChange}>
             <View style={styles.icon}>
               <FontAwesomeIcon icon={sortIcon} />
@@ -64,7 +64,7 @@ const SearchContact = ({navigation}: {navigation: any}) => {
               <Text style={{fontWeight: 'bold', color: 'white'}}>
                 PhoneBook App
               </Text>
-              <Text>Contact List</Text>
+              <Text style={{color: 'white'}}>Contact List</Text>
             </View>
           )}
           {isSearch ? (
@@ -74,10 +74,10 @@ const SearchContact = ({navigation}: {navigation: any}) => {
                   alignItems: 'center',
                   backgroundColor: '#fff',
                   width: 200,
-                  marginRight: 40,
+                  right: 25,
                 }}>
                 <TextInput
-                  placeholder="search"
+                  placeholder="search by name or phone"
                   placeholderTextColor="black"
                   style={styles.input}
                   value={q}
@@ -104,7 +104,7 @@ const SearchContact = ({navigation}: {navigation: any}) => {
           )}
         </View>
       </View>
-      <View>
+      <View style={{maxHeight: '88%'}}>
         <PhoneList
           q={q}
           searchParam={searchParam}
@@ -114,7 +114,7 @@ const SearchContact = ({navigation}: {navigation: any}) => {
         />
       </View>
       <View>
-        <View style={{position: 'absolute'}}>
+        <View style={{position: 'absolute', right: 25, bottom: 50}}>
           <TouchableOpacity onPress={() => navigation.navigate('Add')}>
             <Image
               source={require('../../public/images/addcontact.jpeg')}
@@ -122,8 +122,6 @@ const SearchContact = ({navigation}: {navigation: any}) => {
                 height: 55,
                 width: 55,
                 borderRadius: 25,
-                marginLeft: 300,
-                marginTop: -380,
               }}
             />
           </TouchableOpacity>
@@ -143,14 +141,8 @@ export default function PhoneBox({navigation}: {navigation: any}) {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    margin: 10,
-    padding: 5,
-    borderRadius: 3,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    color: 'black',
-    borderStyle: 'solid',
     alignItems: 'center',
   },
   icon: {

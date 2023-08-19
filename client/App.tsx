@@ -42,11 +42,4 @@ function App(): JSX.Element {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ccc',
-  },
-});
-
 export default App;

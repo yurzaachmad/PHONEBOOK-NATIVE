@@ -4,7 +4,7 @@ import {loadStudent} from '../actions/users';
 import PhoneItem from './PhoneItem';
 import {View, StyleSheet, ScrollView, Image} from 'react-native';
 
-const ITEMS_PER_PAGE = 10; // Number of items to display per page
+const ITEMS_PER_PAGE = 6; // Number of items to display per page
 
 export default function PhoneList({
   q,
