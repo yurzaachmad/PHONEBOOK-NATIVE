@@ -17,7 +17,6 @@ export default function PhoneAdd({navigation}: {navigation: any}) {
     dispatch(addContact(user.name, user.phone));
     setUser({name: '', phone: ''});
     navigation.navigate('Home');
-    // setPlus(false);
   };
   return (
     <View>
